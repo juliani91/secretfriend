@@ -25,6 +25,7 @@
   },
 
   "dependencies": {
+    "nodemailer": "~0.7.1",
     "express": "~3.4.4"
   },
   "devDependencies": {},
