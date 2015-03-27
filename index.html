@@ -15,8 +15,7 @@ function shuffleArray(array){
 }
 
 $(document).ready(function(){
-    var ip  = process.env.OPENSHIFT_NODEJS_IP;
-var port = process.env.OPENSHIFT_NODEJS_PORT;
+
       var from,to,subject,text; 
     $("#send_email").click(function(){   
 
@@ -29,22 +28,22 @@ var port = process.env.OPENSHIFT_NODEJS_PORT;
         to4=$("#to4").val();
         //subject2=$("#subject2").val();
         $("#message").text("Sending E-mail...Please wait");
-        $.get(ip:port,{to:to,subject:arrayNames[0]},function(data, to){
+        $.get("process.env.OPENSHIFT_NODEJS_IP:8080",{to:to,subject:arrayNames[0]},function(data, to){
         if(data=="sent")
         {
 $("#message").empty().html("Email is been sent at " + to + " . Please check inbox!");
         }
 
 });  
-        $.get(ip:port,{to:to2,subject:arrayNames[1]},function(data, to){
+        $.get("process.env.OPENSHIFT_NODEJS_IP:8080",{to:to2,subject:arrayNames[1]},function(data, to){
         console.log("Email sent");
 });   
 
-        $.get(ip:port,{to:to3,subject:arrayNames[2]},function(data, to){
+        $.get("process.env.OPENSHIFT_NODEJS_IP:8080",{to:to3,subject:arrayNames[2]},function(data, to){
         console.log("Email sent");
 });  
 
-        $.get(ip:port,{to:to4,subject:arrayNames[3]},function(data, to){
+        $.get("process.env.OPENSHIFT_NODEJS_IP:8080",{to:to4,subject:arrayNames[3]},function(data, to){
         console.log("Email sent");
 });    
 
