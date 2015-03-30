@@ -31,56 +31,56 @@ res.end("sent");
 }
 });
 
-//////// second field
-var mailOptions2={
-to : req.query.to2,
-subject : req.query.arrayNames[1],
-//text : req.query.text
-}
-console.log(mailOptions2);
-smtpTransport.sendMail(mailOptions2, function(error, response){
-if(error){
-console.log(error);
-res.end("error");
-}else{
-console.log("Message sent: " + response.message);
-res.end("sent");
-}
-});
+// //////// second field
+// var mailOptions2={
+// to : req.query.to2,
+// subject : req.query.arrayNames[1],
+// //text : req.query.text
+// }
+// console.log(mailOptions2);
+// smtpTransport.sendMail(mailOptions2, function(error, response){
+// if(error){
+// console.log(error);
+// res.end("error");
+// }else{
+// console.log("Message sent: " + response.message);
+// res.end("sent");
+// }
+// });
 
-//////// third field
-var mailOptions3={
-to : req.query.to3,
-subject : req.query.arrayNames[2],
-//text : req.query.text
-}
-console.log(mailOptions3);
-smtpTransport.sendMail(mailOptions3, function(error, response){
-if(error){
-console.log(error);
-res.end("error");
-}else{
-console.log("Message sent: " + response.message);
-res.end("sent");
-}
-});
+// //////// third field
+// var mailOptions3={
+// to : req.query.to3,
+// subject : req.query.arrayNames[2],
+// //text : req.query.text
+// }
+// console.log(mailOptions3);
+// smtpTransport.sendMail(mailOptions3, function(error, response){
+// if(error){
+// console.log(error);
+// res.end("error");
+// }else{
+// console.log("Message sent: " + response.message);
+// res.end("sent");
+// }
+// });
 
-//////// fourth field
-var mailOptions4={
-to : req.query.to4,
-subject : req.query.arrayNames[3],
-//text : req.query.text
-}
-console.log(mailOptions4);
-smtpTransport.sendMail(mailOptions4, function(error, response){
-if(error){
-console.log(error);
-res.end("error");
-}else{
-console.log("Message sent: " + response.message);
-res.end("sent");
-}
-});
+// //////// fourth field
+// var mailOptions4={
+// to : req.query.to4,
+// subject : req.query.arrayNames[3],
+// //text : req.query.text
+// }
+// console.log(mailOptions4);
+// smtpTransport.sendMail(mailOptions4, function(error, response){
+// if(error){
+// console.log(error);
+// res.end("error");
+// }else{
+// console.log("Message sent: " + response.message);
+// res.end("sent");
+// }
+// });
 
 
 });
