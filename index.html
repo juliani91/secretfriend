@@ -43,7 +43,7 @@ $(document).ready(function(){
         var sub4 = arrayNames[3];
 
         $("#message").text("Sending E-mail...Please wait ");
-        $("#message").append(sub + " " + sub2 + " " + sub3 + " " + sub4);
+        $("#message").append(subject + " " + sub2 + " " + sub3 + " " + sub4);
         $.get("/send",{to:to,subject:subject},function(data){
 //         if(data=="sent")
 //         {
