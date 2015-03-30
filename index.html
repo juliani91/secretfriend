@@ -20,7 +20,7 @@ $(document).ready(function(){
       
     $("#send_email").click(function(){   
 
-    var arrayNames = [$("#subject").val(),$("#subject2").val(),$("#subject3").val(),$("#subject4").val()]; 
+   // var arrayNames = [$("#subject").val(),$("#subject2").val(),$("#subject3").val(),$("#subject4").val()]; 
 
         to=$("#to").val();
         to2=$("#to2").val();
@@ -28,10 +28,12 @@ $(document).ready(function(){
         to4=$("#to4").val();
 
 
-         // subject=$("#subject").val();
-         // subject2=$("#subject2").val();
-         // subject3=$("#subject3").val();
-         // subject4=$("#subject4").val();
+        subject=$("#subject").val();
+         subject2=$("#subject2").val();
+         subject3=$("#subject3").val();
+         subject4=$("#subject4").val();
+        var arrayNames = [subject, subject2, subject3, subject4];
+      
         //testing
 
          shuffleArray(arrayNames);
