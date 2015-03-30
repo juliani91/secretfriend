@@ -11,7 +11,7 @@ pass: "wero2791"
 app.get('/',function(req,res){
 res.sendfile('index.html');
 });
-app.get('/',function(req,res){
+app.get('/send',function(req,res){
 //code to send e-mail.
 //Will be shown soon.
 
@@ -20,7 +20,7 @@ to : req.query.to,
 subject : req.query.arrayNames[0],
 //text : req.query.text
 }
-console.log(mailOptions);
+//console.log(mailOptions);
 smtpTransport.sendMail(mailOptions, function(error, response){
 if(error){
 console.log(error);
