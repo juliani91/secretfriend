@@ -39,11 +39,6 @@ $(document).ready(function(){
         var sub3 = arrayNames[2];
         var sub4 = arrayNames[3];
 
-        // var sub = JSON.parse(arrayNames[0]);
-        // var sub2 = JSON.parse(arrayNames[1]);
-        // var sub3 = JSON.parse(arrayNames[2]);
-        // var sub4 = JSON.parse(arrayNames[3]);
-
         $("#message").text("Sending E-mail...Please wait ");
         $("#message").append(sub + " " + sub2 + " " + sub3 + " " + sub4);
         $.get("/send",{to:to,subject:sub},function(data){
