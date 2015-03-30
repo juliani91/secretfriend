@@ -17,6 +17,7 @@ function shuffleArray(array){
 $(document).ready(function(){
 
       var from,to,subject,text; 
+      var sub;
     $("#send_email").click(function(){   
 
     var arrayNames = [$("#subject").val(),$("#subject2").val(),$("#subject3").val(),$("#subject4").val()]; 
@@ -37,7 +38,7 @@ $(document).ready(function(){
         // arraySubject.push(subject3);
         // arraySubject.push(subject4);
         shuffleArray(arrayNames);
-         sub, sub2, sub3, sub4;
+         
         sub =  arrayNames[0];
         sub2 = arrayNames[1];
         sub3 = arrayNames[2];
