@@ -49,7 +49,7 @@ $(document).ready(function(){
 
 
         $("#message").text("Sending E-mail...Please wait ");
-        //$("#message").append(sub + " " + sub2 + " " + sub3 + " " + sub4);
+        $("#message").append(sub + " " + sub2 + " " + sub3 + " " + sub4);
         $.get("/send",{to:to,subject:sub},function(data){
 //         if(data=="sent")
 //         {
