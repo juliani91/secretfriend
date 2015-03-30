@@ -1,4 +1,4 @@
-require("./myNode.js");
+require("myNode.js");
 // var express = require('express')
 // var nodemailer = require("nodemailer");
 // var app=express();
