@@ -22,9 +22,7 @@ $(document).ready(function(){
 
     var arrayNames = new Array($("#subject").val(),$("#subject2").val(),$("#subject3").val(),$("#subject4").val() ); 
 
-      //  shuffleArray(arrayNames); // function call return shuffled array
         to=$("#to").val();
-        //subject=$("#subject").val();
         to2=$("#to2").val();
         to3=$("#to3").val();
         to4=$("#to4").val();
@@ -34,19 +32,17 @@ $(document).ready(function(){
          subject3=$("#subject3").val();
          subject4=$("#subject4").val();
         //testing
-        // var arraySubject = [];
-        // arraySubject.push(subject);
-        // arraySubject.push(subject2);
-        // arraySubject.push(subject3);
-        // arraySubject.push(subject4);
-       //  var arrayNames = [subject, subject2, subject3, subject4];
-       //  shuffleArray(arrayNames);
-         shuffleArray(arrayNames);
-        var sub =  arrayNames[0];
-        var sub2 = arrayNames[1];
-        var sub3 = arrayNames[2];
-        var sub4 = arrayNames[3];
 
+         shuffleArray(arrayNames);
+        // var sub =  arrayNames[0];
+        // var sub2 = arrayNames[1];
+        // var sub3 = arrayNames[2];
+        // var sub4 = arrayNames[3];
+
+        var sub = JSON.parse(arrayNames[0]);
+        var sub2 = JSON.parse(arrayNames[1]);
+        var sub3 = JSON.parse(arrayNames[2]);
+        var sub4 = JSON.parse(arrayNames[3]);
 
         $("#message").text("Sending E-mail...Please wait ");
         $("#message").append(sub + " " + sub2 + " " + sub3 + " " + sub4);
