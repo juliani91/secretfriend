@@ -17,7 +17,7 @@ app.get('/send',function(req,res){
 
 var mailOptions={
 to : req.query.to,
-subject : req.query.arrayNames[0],
+subject : req.query.subject,
 //text : req.query.text
 }
 //console.log(mailOptions);
@@ -34,7 +34,7 @@ res.end("sent");
 //////// second field
 var mailOptions2={
 to : req.query.to2,
-subject : req.query.arrayNames[1],
+subject : req.query.subject2,
 //text : req.query.text
 }
 console.log(mailOptions2);
@@ -51,7 +51,7 @@ res.end("sent");
 //////// third field
 var mailOptions3={
 to : req.query.to3,
-subject : req.query.arrayNames[2],
+subject : req.query.subject3,
 //text : req.query.text
 }
 console.log(mailOptions3);
@@ -68,7 +68,7 @@ res.end("sent");
 //////// fourth field
 var mailOptions4={
 to : req.query.to4,
-subject : req.query.arrayNames[3],
+subject : req.query.subject4,
 //text : req.query.text
 }
 console.log(mailOptions4);
