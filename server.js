@@ -88,9 +88,8 @@ res.end("sent");
 var ip  = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
 var port = process.env.OPENSHIFT_NODEJS_PORT || 3000;
 
-// logging the app listening
-  console.log( "Listening on " + ip + ", server_port " + port )
-
-
-
+function displayAddress(theip, theport){
+	console.log("Ip: " + theip + " Port: " + theport);
+}
+displayAddress(ip,port);
 app.listen(port, ip);
