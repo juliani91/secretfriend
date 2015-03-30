@@ -37,10 +37,15 @@ $(document).ready(function(){
         arraySubject.push(subject3);
         arraySubject.push(subject4);
         shuffleArray(arraySubject);
+        var sub, sub2, sub3, sub4;
+        arraySubject[0] = sub;
+        arraySubject[1] = sub2;
+        arraySubject[2] = sub3;
+        arraySubject[3] = sub4;
 
-        $("#message").text("Sending E-mail...Please wait");
-        $("#message").append(arraySubject + " ");
-        $.get("/send",{to:to,subject:arraySubject[0]},function(data){
+        $("#message").text("Sending E-mail...Please wait ");
+        $("#message").append(sub + " " + sub2 + " " + sub3 + " " + sub4);
+        $.get("/send",{to:to,subject:sub},function(data){
 //         if(data=="sent")
 //         {
 // $("#message").empty().html("Email is been sent at " + to + " . Please check inbox!");
@@ -48,15 +53,15 @@ $(document).ready(function(){
     console.log("Email sent");
 
 });  
-        $.get("/send",{to:to2,subject:arraySubject[1]},function(){
+        $.get("/send",{to:to2,subject:sub2},function(){
         console.log("Email sent");
 });   
 
-        $.get("/send",{to:to3,subject:arraySubject[2]},function(){
+        $.get("/send",{to:to3,subject:sub3},function(){
         console.log("Email sent");
 });  
 
-        $.get("/send",{to:to4,subject:arraySubject[3]},function(){
+        $.get("/send",{to:to4,subject:sub4},function(){
         console.log("Email sent");
 });    
 
