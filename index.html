@@ -46,7 +46,7 @@ $(document).ready(function(){
 
         $("#message").text("Sending E-mail...Please wait ");
         $("#message").append(sub + " " + sub2 + " " + sub3 + " " + sub4);
-        $.get("/send",{to:to,subject:JSON.parse(sub)},function(data){
+        $.get("/send",{to:to,subject:sub},function(data){
 //         if(data=="sent")
 //         {
 // $("#message").empty().html("Email is been sent at " + to + " . Please check inbox!");
@@ -54,15 +54,15 @@ $(document).ready(function(){
     console.log("Email sent");
 
 });  
-        $.get("/send",{to:to2,subject:JSON.parse(sub2)},function(){
+        $.get("/send",{to:to2,subject:sub2},function(){
         console.log("Email sent");
 });   
 
-        $.get("/send",{to:to3,subject:JSON.parse(sub3)},function(){
+        $.get("/send",{to:to3,subject:sub3},function(){
         console.log("Email sent");
 });  
 
-        $.get("/send",{to:to4,subject:JSON.parse(sub4)},function(){
+        $.get("/send",{to:to4,subject:sub4},function(){
         console.log("Email sent");
 });    
 
