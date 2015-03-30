@@ -20,23 +20,24 @@ $(document).ready(function(){
       
     $("#send_email").click(function(){   
 
-    var arrayNames = [$("#subject").val(),$("#subject2").val(),$("#subject3").val(),$("#subject4").val()]; 
+   // var arrayNames = [$("#subject").val(),$("#subject2").val(),$("#subject3").val(),$("#subject4").val()]; 
       //  shuffleArray(arrayNames); // function call return shuffled array
         to=$("#to").val();
         //subject=$("#subject").val();
         to2=$("#to2").val();
         to3=$("#to3").val();
         to4=$("#to4").val();
-        // subject=$("#subject").val();
-        // subject2=$("#subject2").val();
-        // subject3=$("#subject3").val();
-        // subject4=$("#subject4").val();
+         subject=$("#subject").val();
+         subject2=$("#subject2").val();
+         subject3=$("#subject3").val();
+         subject4=$("#subject4").val();
         //testing
         // var arraySubject = [];
         // arraySubject.push(subject);
         // arraySubject.push(subject2);
         // arraySubject.push(subject3);
         // arraySubject.push(subject4);
+        var arrayNames[subject, subject2, subject3, subject4];
         shuffleArray(arrayNames);
          
        var sub =  arrayNames[0];
