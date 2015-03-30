@@ -45,10 +45,10 @@ $(document).ready(function(){
         $("#message").text("Sending E-mail...Please wait ");
         //$("#message").append(subject + " " + sub2 + " " + sub3 + " " + sub4);
         $.get("/send",{to:to,subject:subject},function(data){
-         if(data=="sent")
-         {
- $("#message").text("Email is been sent. Please check inbox!");
-         }
+ //         if(data=="sent")
+ //         {
+ // $("#message").empty().html("Email is been sent. Please check inbox!");
+ //         }
     console.log("Email sent");
 
 });  
@@ -62,6 +62,7 @@ $(document).ready(function(){
 
         $.get("/send",{to:to4,subject:sub4},function(){
         console.log("Email sent");
+        $("#message").text("Email has been sent. Check inbox");
 });    
 
     });
