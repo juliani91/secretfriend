@@ -17,7 +17,7 @@ function shuffleArray(array){
 $(document).ready(function(){
 
       var from,to,subject,text; 
-      var sub;
+      
     $("#send_email").click(function(){   
 
     var arrayNames = [$("#subject").val(),$("#subject2").val(),$("#subject3").val(),$("#subject4").val()]; 
@@ -39,10 +39,10 @@ $(document).ready(function(){
         // arraySubject.push(subject4);
         shuffleArray(arrayNames);
          
-        sub =  arrayNames.indexOf($("#subject").val());
-        sub2 = arrayNames.indexOf($("#subject2").val());
-        sub3 = arrayNames.indexOf($("#subject3").val());
-        sub4 = arrayNames.indexOf($("#subject4").val());
+       var sub =  arrayNames[0];
+       var sub2 = arrayNames[1];
+       var sub3 = arrayNames[2];
+       var sub4 = arrayNames[3];
 
         $("#message").text("Sending E-mail...Please wait ");
         $("#message").append(sub + " " + sub2 + " " + sub3 + " " + sub4);
