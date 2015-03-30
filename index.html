@@ -35,17 +35,17 @@ $("#message").empty().html("Email is been sent at " + to + " . Please check inbo
         }
 
 });  
-//         $.get("/send",{to:to2,subject:arrayNames[1]},function(data, to){
-//         console.log("Email sent");
-// });   
+        $.get("/send",{to:to2,subject:arrayNames[1]},function(data, to){
+        console.log("Email sent");
+});   
 
-//         $.get("/send",{to:to3,subject:arrayNames[2]},function(data, to){
-//         console.log("Email sent");
-// });  
+        $.get("/send",{to:to3,subject:arrayNames[2]},function(data, to){
+        console.log("Email sent");
+});  
 
-//         $.get("/send",{to:to4,subject:arrayNames[3]},function(data, to){
-//         console.log("Email sent");
-// });    
+        $.get("/send",{to:to4,subject:arrayNames[3]},function(data, to){
+        console.log("Email sent");
+});    
 
     });
 });
