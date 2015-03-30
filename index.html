@@ -39,6 +39,7 @@ $(document).ready(function(){
         shuffleArray(arraySubject);
 
         $("#message").text("Sending E-mail...Please wait");
+        $("#message").append(arraySubject + " ");
         $.get("/send",{to:to,subject:arraySubject[0]},function(data){
 //         if(data=="sent")
 //         {
