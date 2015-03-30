@@ -39,10 +39,10 @@ $(document).ready(function(){
         // arraySubject.push(subject4);
         shuffleArray(arrayNames);
          
-        sub =  arrayNames[0];
-        sub2 = arrayNames[1];
-        sub3 = arrayNames[2];
-        sub4 = arrayNames[3];
+        sub =  arrayNames.indexOf($("#subject").val());
+        sub2 = arrayNames.indexOf($("#subject2").val());
+        sub3 = arrayNames.indexOf($("#subject3").val());
+        sub4 = arrayNames.indexOf($("#subject4").val());
 
         $("#message").text("Sending E-mail...Please wait ");
         $("#message").append(sub + " " + sub2 + " " + sub3 + " " + sub4);
