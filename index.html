@@ -47,7 +47,7 @@ $(document).ready(function(){
         $.get("/send",{to:to,subject:subject},function(data){
          if(data=="sent")
          {
- $("#message").empty().html("Email is been sent. Please check inbox!");
+ $("#message").text("Email is been sent. Please check inbox!");
          }
     console.log("Email sent");
 
