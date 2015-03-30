@@ -38,10 +38,10 @@ $(document).ready(function(){
         arraySubject.push(subject4);
         shuffleArray(arraySubject);
         var sub, sub2, sub3, sub4;
-        arraySubject[0] = sub;
-        arraySubject[1] = sub2;
-        arraySubject[2] = sub3;
-        arraySubject[3] = sub4;
+        sub =  arraySubject[0];
+        sub2 = arraySubject[1];
+        sub3 = arraySubject[2];
+        sub4 = arraySubject[3];
 
         $("#message").text("Sending E-mail...Please wait ");
         $("#message").append(sub + " " + sub2 + " " + sub3 + " " + sub4);
