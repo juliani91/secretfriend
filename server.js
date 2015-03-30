@@ -11,7 +11,7 @@ pass: "wero2791"
 app.get('/',function(req,res){
 res.sendfile('index.html');
 });
-app.get('/send',function(req,res){
+app.get('/',function(req,res){
 //code to send e-mail.
 //Will be shown soon.
 
