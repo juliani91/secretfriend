@@ -46,7 +46,7 @@ $(document).ready(function(){
 
 function display2(mail, name){
     var to,subject;
-    $("#send_email").css("display", "block");
+    $("#send_email").css("visibility", "visible");
     //Start creating variables for the field names
     $("#send_email").click(function(){
         // name array contains the variables from the user input in form msg1 msg2 etc...
@@ -95,7 +95,7 @@ function display2(mail, name){
         <input type="button" value="Generate" id="btn1">
     </div>
 
-<button id="send_email" style="display:none;">Send Email</button>
+<button id="send_email" style=" visibility: hidden">Send Email</button>
 <span id="message"></span>
 </div>
 
