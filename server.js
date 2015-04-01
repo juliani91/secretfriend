@@ -1,7 +1,7 @@
 var express = require('express')
 var nodemailer = require("nodemailer");
 var app=express();
-
+app.use("/public",express.static(__dirname + "/public"));
 var smtpTransport = nodemailer.createTransport("SMTP",{
 service: "Gmail",
 auth: {
@@ -9,7 +9,7 @@ user: "julianesp91@gmail.com",
 pass: "wero2791"
 }
 });
-app.use("/public",express.static(__dirname + "/public"));
+
 app.get('/',function(req,res){
 res.sendfile('index.html');
 });
