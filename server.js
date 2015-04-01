@@ -1,6 +1,6 @@
 var express = require('express')
 var nodemailer = require("nodemailer");
-var path = require("path");
+var path = require('path');
 var app=express();
 
 
@@ -16,7 +16,7 @@ app.get('/',function(req,res){
 res.sendfile('index.html');
 });
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '/public')));
 
 app.get('/send',function(req,res){
 //code to send e-mail.
