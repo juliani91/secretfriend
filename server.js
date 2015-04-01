@@ -15,7 +15,7 @@ app.get('/',function(req,res){
 res.sendfile('index.html');
 });
 app.use(app.router);
-app.use("/public",express.static(__dirname + "/public"));
+app.use(express.static(__dirname + "/public"));
 
 
 app.get('/send',function(req,res){
