@@ -15,6 +15,7 @@ res.sendfile('index.html');
 });
 
 app.use("/public",express.static(__dirname + "/public"));
+app.use(app.router);
 app.get('/send',function(req,res){
 //code to send e-mail.
 //Will be shown soon.
