@@ -14,7 +14,6 @@ pass: "wero2791"
 app.get('/',function(req,res){
 res.sendfile('index.html');
 });
-app.use(app.router);
 app.use(express.static(__dirname + '/'));
 //app.use(express.static(__dirname + '/public/css'));
 app.get('/send',function(req,res){
