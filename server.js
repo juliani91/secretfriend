@@ -12,7 +12,7 @@ pass: "wero2791"
 });
 
 app.get('/',function(req,res){
-res.sendfile('index.html');
+res.sendfile('/index.html');
 });
 
 app.use(express.static(path.join(__dirname, 'public')));
