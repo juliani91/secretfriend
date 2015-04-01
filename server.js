@@ -1,7 +1,7 @@
 var express = require('express')
 var nodemailer = require("nodemailer");
 var app=express();
-app.use(express.static(__dirname + "/public"));
+//app.use(express.static(__dirname + "/public"));
 var smtpTransport = nodemailer.createTransport("SMTP",{
 service: "Gmail",
 auth: {
