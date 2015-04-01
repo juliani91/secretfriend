@@ -31,60 +31,7 @@ console.log("Message sent: " + response.message);
 res.end("sent");
 }
 });
-
-// //////// second field
-// var mailOptions2={
-// to : req.query.to2,
-// subject : req.query.sub2
-// //text : req.query.text
-// }
-// console.log(mailOptions2);
-// smtpTransport.sendMail(mailOptions2, function(error, response){
-// if(error){
-// console.log(error);
-// res.end("error");
-// }else{
-// console.log("Message sent: " + response.message);
-// res.end("sent");
-// }
-// });
-
-// //////// third field
-// var mailOptions3={
-// to : req.query.to3,
-// subject : req.query.sub3
-// //text : req.query.text
-// }
-// console.log(mailOptions3);
-// smtpTransport.sendMail(mailOptions3, function(error, response){
-// if(error){
-// console.log(error);
-// res.end("error");
-// }else{
-// console.log("Message sent: " + response.message);
-// res.end("sent");
-// }
-// });
-
-// //////// fourth field
-// var mailOptions4={
-// to : req.query.to4,
-// subject : req.query.sub4
-// //text : req.query.text
-// }
-// console.log(mailOptions4);
-// smtpTransport.sendMail(mailOptions4, function(error, response){
-// if(error){
-// console.log(error);
-// res.end("error");
-// }else{
-// console.log("Message sent: " + response.message);
-// res.end("sent");
-// }
-// });
-
-
-});
+}); // end of function
 
 var ip  = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
 var port = process.env.OPENSHIFT_NODEJS_PORT || 3000;
