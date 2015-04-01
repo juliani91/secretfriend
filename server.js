@@ -15,7 +15,8 @@ pass: "wero2791"
 app.get('/',function(req,res){
 res.sendfile('index.html');
 });
-express.static(path.join(__dirname, 'public'));
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/send',function(req,res){
 //code to send e-mail.
