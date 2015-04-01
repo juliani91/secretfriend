@@ -1,5 +1,6 @@
 var express = require('express')
 var nodemailer = require("nodemailer");
+var path = require('path');
 var app=express();
 
 var smtpTransport = nodemailer.createTransport("SMTP",{
@@ -14,7 +15,7 @@ app.get('/',function(req,res){
 res.sendfile('index.html');
 });
 
-app.use("/public",express.static(__dirname + "/public"));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(app.router);
 app.get('/send',function(req,res){
 //code to send e-mail.
