@@ -14,7 +14,7 @@ app.get('/',function(req,res){
 res.sendfile('index.html');
 });
 
-app.use(express.static("/public"));
+app.use("/public",express.static(__dirname + "/public"));
 app.get('/send',function(req,res){
 //code to send e-mail.
 //Will be shown soon.
