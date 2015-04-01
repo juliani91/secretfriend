@@ -1,8 +1,8 @@
-<!DOCTYPE>
+<!DOCTYPE html>
 <html>
 <head>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	<script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>
 // shuffling the array names   it repeats on 0 so change
 function shuffleArray(array){
     for(var i = array.length - 1; i > 0; i--){
@@ -14,91 +14,87 @@ function shuffleArray(array){
     return array;
 }
 
+// global variables
+var ids = "email";
+var ids2 = "msg";
+var emailArray = [];
+var nameArray = [];
+///////////generate inputs
 $(document).ready(function(){
+    $("#btn1").click(function(){
+        var first_value = $("#allOptions").val();
+    
+        for(var i=0; i<first_value; i++){
+            $("#firstForm").append('<input type="text" placeholder="Enter your Email" id="' + (ids +(1+i))  + '"><br/>');
+            $("#firstForm").append('<input type="text" placeholder="Enter your name" id="' + (ids2 +(1+i))  + '"><br/><br/>');
 
-      var from,to,subject,text; 
-      
-    $("#send_email").click(function(){   
-
-   // var arrayNames = [$("#subject").val(),$("#subject2").val(),$("#subject3").val(),$("#subject4").val()]; 
-
-        to=$("#to").val();
-        to2=$("#to2").val();
-        to3=$("#to3").val();
-        to4=$("#to4").val();
+           emailArray.push("#" +ids + (i+1)); // create ids
+           nameArray.push("#" +ids2 + (i+1)); // create ids
 
 
-        subject=$("#subject").val();
-         subject2=$("#subject2").val();
-         subject3=$("#subject3").val();
-         subject4=$("#subject4").val();
-        var arrayNames = [subject, subject2, subject3, subject4];
-      
-        //testing
-
-         shuffleArray(arrayNames);
-        var subject =  arrayNames[0];
-        var sub2 = arrayNames[1];
-        var sub3 = arrayNames[2];
-        var sub4 = arrayNames[3];
-
-        $("#message").text("Sending E-mail...Please wait ");
-        //$("#message").append(subject + " " + sub2 + " " + sub3 + " " + sub4);
-        $.get("/send",{to:to,subject:subject},function(data){
- //         if(data=="sent")
- //         {
- // $("#message").empty().html("Email is been sent. Please check inbox!");
- //         }
-    console.log("Email sent");
-
-});  
-        $.get("/send",{to:to2,subject:sub2},function(){
-        console.log("Email sent");
-});   
-
-        $.get("/send",{to:to3,subject:sub3},function(){
-        console.log("Email sent");
-});  
-
-        $.get("/send",{to:to4,subject:sub4},function(){
-        console.log("Email sent");
-        $("#message").text("Email has been sent. Check inbox");
-});    
-
+        }
+        $("#small_form").css("display", "none");
+        shuffleArray(nameArray); // testing shuffle then printing. test shuffleArray and shuffle
+        // console.log(emailArray);
+         //console.log(nameArray);
+        display2(emailArray, nameArray); // pass both variables to another function
+        });
     });
-});
 
 
+function display2(mail, name){
+    var to,subject;
+    $("#send_email").css("display", "block");
+    //Start creating variables for the field names
+    $("#send_email").click(function(){
+        // name array contains the variables from the user input in form msg1 msg2 etc...
+        // for loop for iterating whole array
+        
+        for(var i=0; i<mail.length; i++){
+            to = $(mail[i]).val(); // get all the emails
+            subject = $(name[i]).val();// get all the names
+            //console.log(to);
+            //console.log(subject);
+        $.get("/send",{to:to,subject:subject},function(){
+            console.log("Email sent");
+            $("#message").text("Emails sent, please check your inbox.");
+        });  
+      
+    }// end of LOOP
+       
+    });
 
+}
 </script>
 </head>
 <body>
 
 <div id="container">
 <div></div>
-Node.JS Email application
 
 <div>
-<h1>Mailer In Node.JS</h1>
-<input id="to" type="text" placeholder="Enter E-mail"  /> <br>
-<input id="subject" type="text" placeholder="Write a name"  /> <br><br>
-<input id="to2" type="text" placeholder="Enter E-mail"  /> <br>
-<input id="subject2" type="text" placeholder="Write a name"  /> <br><br>
-<input id="to3" type="text" placeholder="Enter E-mail"  /> <br>
-<input id="subject3" type="text" placeholder="Write a name"  /> <br><br>
-<input id="to4" type="text" placeholder="Enter E-mail"  /> <br>
-<input id="subject4" type="text" placeholder="Write a name"  /> <br>
-<!-- <textarea id="content" cols="40" rows="5" placeholder="Write what you want to send" ></textarea> -->
+<h1>Secret Friend Raffle</h1>
+<!-- Append inputs to the form from jquery -->
+    <form name="form1" id="firstForm">
+        
+    </form>
+<!-- select menu accessed from jquery -->
+    <div id="small_form">
+        <select id="allOptions">
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select>
+        <input type="button" value="Generate" id="btn1">
+    </div>
 
-<button id="send_email">Send Email</button>
+<button id="send_email" style="display:none;">Send Email</button>
 <span id="message"></span>
 </div>
-
 </body>
 </html>
-
-
-
-
-
-
