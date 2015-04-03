@@ -19,6 +19,7 @@ function shuffleArray(array){
 // global variables
 var ids = "email";
 var ids2 = "msg";
+var divClass = "divClass";
 var emailArray = [];
 var nameArray = [];
 ///////////generate inputs
@@ -27,18 +28,24 @@ $(document).ready(function(){
         var first_value = $("#allOptions").val();
     
         for(var i=0; i<first_value; i++){
-            $("#firstForm").append('<input type="text" placeholder="Enter your Email" id="' + (ids +(1+i))  + '"><br/>');
-            $("#firstForm").append('<input type="text" placeholder="Enter your name" id="' + (ids2 +(1+i))  + '"><br/><br/>');
+            $("#firstForm").append('<div class="' + divClass +'"><input type="text" placeholder="Enter your Email" id="' + (ids +(1+i))  + '"><br/> <input type="text" placeholder="Enter your name" id="'+ (ids2 +(1+i))  + '"><br/><br/></div>');
+            
 
            emailArray.push("#" +ids + (i+1)); // create ids
            nameArray.push("#" +ids2 + (i+1)); // create ids
 
 
-        }
+        }// end for loop
         $("#small_form").css("display", "none");
         shuffleArray(nameArray); // testing shuffle then printing. test shuffleArray and shuffle
         // console.log(emailArray);
          //console.log(nameArray);
+         $(".allBoxes").css({
+               'border' : '1px solid black',
+               'width' : '400px',
+               'padding' : '10px'
+            });
+         
         display2(emailArray, nameArray); // pass both variables to another function
         });
     });
@@ -47,6 +54,7 @@ $(document).ready(function(){
 function display2(mail, name){
     var to,subject;
     $("#send_email").css("visibility", "visible");
+
     //Start creating variables for the field names
     $("#send_email").click(function(){
         // name array contains the variables from the user input in form msg1 msg2 etc...
@@ -55,30 +63,83 @@ function display2(mail, name){
         for(var i=0; i<mail.length; i++){
             to = $(mail[i]).val(); // get all the emails
             subject = $(name[i]).val();// get all the names
-            //console.log(to);
-            //console.log(subject);
-        $.get("/send",{to:to,subject:subject},function(){
+            console.log(to);
+            console.log(subject);
+        $.get("http://localhost:3000/send",{to:to,subject:subject},function(){
             console.log("Email sent");
             $("#message").text("Emails sent, please check your inbox.");
         });  
       
     }// end of LOOP
-       
+       $("#firstForm").fadeToggle(4000);
+       $("#send_email").fadeToggle(4000);
     });
 
 }
 </script>
 </head>
-<body>
+<body style="max-width:100%; width:960px;">
+<div class="wrapper">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="http://julianespinosaportfolio.comli.com/">Resume</a></li><span class="right-line"></span>
+                    <li><a href="http://julianespinosaportfolio.comli.com/portfolio.html">Portfolio</a></li><span class="right-line"></span>
+                    <li><a href="http://github.com/juliani91">Github</a></li><span class="right-line"></span>
+                    <li><h1>Julian Espinosa</h1></li>
+                </ul>
+            </nav>
+            
+        </header>
+        <section>
+            <h1>Secret Friend Generator</h1>
+            <div class="row">
+                <div class="col-5 image-left">
+                    <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                        <div class="flipper">
+                            <div class="front">
+                                <!-- front content -->
+                                <img src="/public/poll.png" width="150" height="100px" alt="Box">
+                                <h2>How it works?</h2>
+                    
+                            </div>
+                            <div class="back">
+                                <!-- back content -->
+                                 <p >The user has to select how many participants are going to be (minimum 10). Once this step is done he/she needs to input their emails and names on the boxes. Next just click the send email button and every participant will receive in their emails who is their secret friend.</p> 
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- end of first column -->
+                <div class="col-5 image-left">
+                        <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                        <div class="flipper">
+                            <div class="front">
+                                <!-- front content -->
+                                <img src="/public/list.png" width="150" height="100px" alt="List">
+                                <h2>Make sure</h2>
+                    
+                            </div>
+                            <div class="back">
+                                <!-- back content -->
+                                 <p style="font-size:16pt;">Make sure to know what your secret friend wants for present. It will be a good idea to have a list with the desired presents. (This function will be implemented later).</p> 
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- end of first column -->
+            </div> <!-- end of row -->
+        </section>
+        <section style="padding-top: 20px; text-align:center;">
+            <div class="row">
+                <div class="col-12 allBoxes">
+                  
+         
 
-<div id="container">
-<div></div>
-
-<div>
-<h1>Secret Friend Raffle</h1>
+  
 <!-- Append inputs to the form from jquery -->
-    <form name="form1" id="firstForm">
-        
+    <form name="form1" >
+        <div id="firstForm" >
+            
+        </div>
     </form>
 <!-- select menu accessed from jquery -->
     <div id="small_form">
@@ -95,9 +156,17 @@ function display2(mail, name){
         <input type="button" value="Generate" id="btn1">
     </div>
 
-<button id="send_email" style=" visibility: hidden">Send Email</button>
+<button id="send_email" style="visibility:hidden;margin-left:10px;">Send Email</button>
 <span id="message"></span>
-</div>
+
+       </div>
+        </div> 
+        </section> <!-- end of section below images -->
+
+    </div> <!-- end of wrapper -->
+
+
+    
 
 </body>
 </html>

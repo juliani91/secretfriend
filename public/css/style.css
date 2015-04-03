@@ -1,4 +1,180 @@
+*{
+    margin: 0 auto;
+}
+
+.row{
+display: flex;
+flex-wrap:wrap;
+width:100%;
+
+}
+.col-1{
+width: 8.33%;
+}
+.col-2{
+width: 16.66%;
+}
+.col-3{
+width: 25%;
+}
+.col-4{
+width: 33.33%;
+}
+.col-5{
+width: 41.66%;
+}
+.col-6{
+width: 50%;
+}
+.col-7{
+width: 58.33%;
+}
+.col-8{
+width: 66.66%;
+}
+.col-9{
+width: 75%;
+}
+.col-10{
+width: 83.33%;
+}
+.col-11{
+width: 91.66%;
+}
+.col-12{
+width: 100%;
+}
+
+
 body{
-	
-	text-align: center;
+    font-family: "Simonetta", "Trebuchet MS", Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.wrapper{
+    margin: 0 auto;
+    width: 960px;
+    max-width: 100%;
+}
+
+header{
+    background: #7B7B8F;
+    color: #fff;
+    margin-top:20px;
+    
+    /*e0e0ed*/
+}
+
+
+ul{
+    display: flex;
+    flex-flow:row wrap;
+    justify-content: space-around;
+    list-style-type: none;
+
+    padding: 10px;
+}
+li a{
+    color: #fff;
+    font-size: 14pt;
+    text-decoration: none;
+}
+.right-line{
+    border-right:2px solid black;
+}
+
+a:hover{
+    color: #EBEBEB;
+}
+
+.image-left{
+    background:#484848;
+    border:1px solid black;
+    color: #fff;
+    opacity: 0.8;
+    padding: 15px;
+    text-align: center;
+}
+
+
+
+section{
+    background: #e0e0ed;
+    
+
+}
+
+section h1{
+    color: #484848;
+    font-size: 32pt;
+    padding-top:20px;
+    padding-bottom: 20px;
+    text-shadow: 2px 2px #fff; 
+    text-align: center;
+}
+ img{
+    background:#fff;
+    border-radius:5px;
+    float:left;
+ }
+
+/* FORM STYLING */
+
+.divClass{
+    float: left;
+    padding-left: 10px;
+}
+
+#send_email{
+    font-size: 18pt;
+    padding:5px;
+}
+
+
+
+
+/* FLIPPING METHOD FOR THE MIDDLE IMAGES */
+
+
+/* entire container, keeps perspective */
+.flip-container {
+    perspective: 1000;
+}
+    /* flip the pane when hovered */
+    .flip-container:hover .flipper, .flip-container.hover .flipper {
+        transform: rotateY(180deg);
+    }
+
+.flip-container, .front, .back {
+    width: 350px;
+    height: 120px;
+}
+
+/* flip speed goes here */
+.flipper {
+    transition: 0.6s;
+    transform-style: preserve-3d;
+
+    position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+    backface-visibility: hidden;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+    z-index: 2;
+    /* for firefox 31 */
+    transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+    transform: rotateY(180deg);
 }
