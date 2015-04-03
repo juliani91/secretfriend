@@ -67,7 +67,7 @@ function display2(mail, name){
             console.log(subject);
         $.get("http://localhost:3000/send",{to:to,subject:subject},function(){
             console.log("Email sent");
-            $(".allBoxes").text("Emails sent, please check your inbox.");
+            $(".allBoxes").append("Emails sent, please check your inbox.");
         });  
       
     }// end of LOOP
