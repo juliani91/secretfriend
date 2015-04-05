@@ -65,7 +65,7 @@ function display2(mail, name){
             subject = $(name[i]).val();// get all the names
             //console.log(to);
             //console.log(subject);
-        $.get("http://localhost:3000/send",{to:to,subject:subject},function(){
+        $.get("/send",{to:to,subject:subject},function(){
             console.log("Email sent");
             $("#message").append("Emails sent, please check your inbox.");
         });  
