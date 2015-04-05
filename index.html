@@ -67,7 +67,7 @@ function display2(mail, name){
             //console.log(subject);
         $.get("/send",{to:to,subject:subject},function(){
             console.log("Email sent");
-            $("#message").append("Emails sent, please check your inbox.");
+            $("#message").text("Emails sent, please check your inbox.");
         });  
       
     }// end of LOOP
