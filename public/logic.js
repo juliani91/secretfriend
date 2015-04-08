@@ -47,7 +47,8 @@ $(document).ready(function(){
                 
       $("#textarea1").css({
         'width' : '200px',
-        'height' : '130px'
+        'height' : '130px',
+        'margin-bottom' : '10px'
       });
          
         display2(emailArray, nameArray, areaId); // pass both variables to another function
