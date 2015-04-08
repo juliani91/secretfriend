@@ -13,6 +13,8 @@ function shuffleArray(array){
 var ids = "email";
 var ids2 = "msg";
 var divClass = "divClass";
+var area = "textarea1"
+var areaId;
 var emailArray = [];
 var nameArray = [];
 ///////////generate inputs
@@ -38,13 +40,22 @@ $(document).ready(function(){
                'width' : '400px',
                'padding' : '10px'
             });
+
+             $("#firstForm").append
+                ('<textarea placeholder="ENTER THE NAMES AND PRESENTS" id="'+ area +'"></textarea>');
+                areaId = ("#" + area); // get the id of the textarea
+                
+      $("#textarea1").css({
+        'width' : '200px',
+        'height' : '130px'
+      });
          
-        display2(emailArray, nameArray); // pass both variables to another function
+        display2(emailArray, nameArray, areaId); // pass both variables to another function
         });
     });
 
 
-function display2(mail, name){
+function display2(mail, name, areaId){
     var to,subject, text;
     $("#send_email").css("visibility", "visible");
 
@@ -56,7 +67,7 @@ function display2(mail, name){
         for(var i=0; i<mail.length; i++){
             to = $(mail[i]).val(); // get all the emails
             subject = "Secret Friend Generator :) by Julian Espinosa" // get all the names
-            text = "Your Secret Friend is: " + $(name[i]).val(); 
+            text = "Your Secret Friend is: " + $(name[i]).val() + "\nPRESENT LIST: \n" + $(areaId).val();
             //console.log(to);
             //console.log(subject);
         $.get("/send",{to:to,subject:subject,text:text},function(){
