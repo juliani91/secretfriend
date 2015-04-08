@@ -23,7 +23,7 @@ $(document).ready(function(){
         var first_value = $("#allOptions").val();
     
         for(var i=0; i<first_value; i++){
-            $("#firstForm").append('<div class="' + divClass +'"><input type="text" placeholder="Enter your Email" id="' + (ids +(1+i))  + '"><br/> <input type="text" placeholder="Enter your name" id="'+ (ids2 +(1+i))  + '"><br/><br/></div>');
+            $("#firstForm").append('<div class="' + divClass +'"><input type="text" placeholder="Enter your Email ' + (1+i) + '" id="' + (ids +(1+i))  + '"><br/> <input type="text" placeholder="Enter your name '+ (1+i) +'" id="'+ (ids2 +(1+i))  + '"><br/><br/></div>');
             
 
            emailArray.push("#" +ids + (i+1)); // create ids
