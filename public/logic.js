@@ -56,8 +56,8 @@ function display2(mail, name){
         for(var i=0; i<mail.length; i++){
             to = $(mail[i]).val(); // get all the emails
             subject = "Secret Friend Generator :), Your Secret Friend is: " + $(name[i]).val();// get all the names
-            console.log(to);
-            console.log(subject);
+            //console.log(to);
+            //console.log(subject);
         $.get("/send",{to:to,subject:subject},function(){
             console.log("Email sent");
             $("#message").text("Emails sent, please check your inbox.");
