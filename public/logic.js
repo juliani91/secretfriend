@@ -76,8 +76,8 @@ function display2(mail, name, areaId){
         });  
       
     }// end of LOOP
-       $("#firstForm").fadeToggle(4000);
-       $("#send_email").fadeToggle(4000);
+       $("#firstForm").fadeToggle(2000);
+       $("#send_email").fadeToggle(2000);
     });
 
 }
