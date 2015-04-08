@@ -42,7 +42,7 @@ $(document).ready(function(){
             });
 
              $("#firstForm").append
-                ('<textarea placeholder="ENTER THE NAMES AND PRESENTS" id="'+ area +'"></textarea>');
+                ('<textarea placeholder="ENTER THE NAMES AND PRESENTS (OPTIONAL)" id="'+ area +'"></textarea>');
                 areaId = ("#" + area); // get the id of the textarea
                 
       $("#textarea1").css({
