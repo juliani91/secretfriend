@@ -125,10 +125,53 @@ section h1{
     padding-left: 10px;
 }
 
+/*Send email button */
 #send_email{
+    -webkit-border-radius: 28px;
+  -moz-border-radius: 28px;
+  border-radius: 28px;
     font-size: 18pt;
-    padding:5px;
+    font-family: "Simonetta", "Trebuchet MS", Arial, sans-serif;
+  color: #ffffff;
+  font-size: 18pt;
+  background: #7B7B8F;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
 }
+#send_email:hover {
+  background: #525252;
+  text-decoration: none;
+}
+/*Send email button*/
+#allOptions{
+    width: 10%;
+    background:#484848;
+    color: #fff;
+    font-family: "Simonetta", "Trebuchet MS", Arial, sans-serif;
+    font-size: 12pt;
+    
+}
+
+/* Generate button */
+
+ #btn1 {
+  -webkit-border-radius: 28px;
+  -moz-border-radius: 28px;
+  border-radius: 28px;
+  font-family: "Simonetta", "Trebuchet MS", Arial, sans-serif;
+  color: #ffffff;
+  font-size: 18pt;
+  background: #7B7B8F;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+#btn1:hover {
+  background: #525252;
+  text-decoration: none;
+}
+/* End button */
+
 
 
 
