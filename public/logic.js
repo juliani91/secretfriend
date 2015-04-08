@@ -45,7 +45,7 @@ $(document).ready(function(){
 
 
 function display2(mail, name){
-    var to,subject;
+    var to,subject, text;
     $("#send_email").css("visibility", "visible");
 
     //Start creating variables for the field names
@@ -55,10 +55,11 @@ function display2(mail, name){
         
         for(var i=0; i<mail.length; i++){
             to = $(mail[i]).val(); // get all the emails
-            subject = "Secret Friend Generator :), Your Secret Friend is: " + $(name[i]).val();// get all the names
+            subject = "Secret Friend Generator :) by Julian Espinosa" // get all the names
+            text = "Your Secret Friend is: " + $(name[i]).val(); 
             //console.log(to);
             //console.log(subject);
-        $.get("/send",{to:to,subject:subject},function(){
+        $.get("/send",{to:to,subject:subject,text:text},function(){
             console.log("Email sent");
             $("#message").text("Emails sent, please check your inbox.");
         });  
