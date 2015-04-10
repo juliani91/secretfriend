@@ -59,7 +59,7 @@ $(document).ready(function(){
 function display2(mail, name, areaId){
     var to,subject, text;
     $("#send_email").css("visibility", "visible");
-
+    $("#refresh-form").css("visibility", "visible"); //start over button
     //Start creating variables for the field names
     $("#send_email").click(function(){
         // name array contains the variables from the user input in form msg1 msg2 etc...
@@ -80,5 +80,8 @@ function display2(mail, name, areaId){
        $("#firstForm").fadeToggle(2000);
        $("#send_email").fadeToggle(2000);
     });
+        $('#refresh-form').click(function() {
+     location.reload();
+});
 
 }

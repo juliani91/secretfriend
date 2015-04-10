@@ -172,6 +172,27 @@ section h1{
 }
 /* End button */
 
+/* Start over button */
+ #refresh-form {
+  -webkit-border-radius: 28px;
+  -moz-border-radius: 28px;
+  border-radius: 28px;
+  font-family: "Simonetta", "Trebuchet MS", Arial, sans-serif;
+  color: #ffffff;
+  font-size: 18pt;
+  background: #525252;
+  padding: 10px 20px 10px 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-decoration: none;
+}
+
+#refresh-form:hover {
+  background: #7B7B8F;
+  text-decoration: none;
+}
+
+
 /* footer */
 
 
