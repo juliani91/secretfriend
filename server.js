@@ -7,8 +7,8 @@ var app=express();
 var smtpTransport = nodemailer.createTransport("SMTP",{
 service: "Gmail",
 auth: {
-user: "julianesp91@gmail.com",
-pass: "wero2791"
+user: "youremail@gmail.com",
+pass: "yourpassword"
 }
 });
 
